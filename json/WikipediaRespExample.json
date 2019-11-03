@@ -1,0 +1,104 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "sroffset": 10,
+    "continue": "-||"
+  },
+  "query": {
+    "searchinfo": {
+      "totalhits": 28011
+    },
+    "search": [
+      {
+        "ns": 0,
+        "title": "Donald Trump",
+        "pageid": 4848272,
+        "size": 410324,
+        "wordcount": 35538,
+        "snippet": "Donald John <span class=\"searchmatch\">Trump</span> (born June 14, 1946) is the 45th and current president of the United States. Before entering politics, he was a businessman and television",
+        "timestamp": "2019-11-02T07:22:42Z"
+      },
+      {
+        "ns": 0,
+        "title": "Trump",
+        "pageid": 253639,
+        "size": 3578,
+        "wordcount": 388,
+        "snippet": "<span class=\"searchmatch\">Trump</span> most commonly refers to: Donald <span class=\"searchmatch\">Trump</span> (born 1946), 45th president of the United States, businessman, and television personality <span class=\"searchmatch\">Trump</span> (card games)",
+        "timestamp": "2019-10-21T14:15:13Z"
+      },
+      {
+        "ns": 0,
+        "title": "Family of Donald Trump",
+        "pageid": 52170275,
+        "size": 34387,
+        "wordcount": 3066,
+        "snippet": "The family of Donald <span class=\"searchmatch\">Trump</span>, the owner of the <span class=\"searchmatch\">Trump</span> Organization and 45th president of the United States, is a prominent American family active in real",
+        "timestamp": "2019-10-31T10:18:22Z"
+      },
+      {
+        "ns": 0,
+        "title": "Impeachment inquiry against Donald Trump",
+        "pageid": 61874576,
+        "size": 209876,
+        "wordcount": 17156,
+        "snippet": "An impeachment inquiry against Donald <span class=\"searchmatch\">Trump</span>, President of the United States, was initiated on September 24, 2019, by U.S. House Speaker Nancy Pelosi.",
+        "timestamp": "2019-11-02T10:00:57Z"
+      },
+      {
+        "ns": 0,
+        "title": "Melania Trump",
+        "pageid": 1209075,
+        "size": 63997,
+        "wordcount": 5782,
+        "snippet": "Melania <span class=\"searchmatch\">Trump</span> (/m\u0259\u02c8l\u0251\u02d0ni\u0259/; born Melanija Knavs; [m\u025b\u02c8la\u02d0nija \u02c8kna\u02d0u\u032fs], Germanized to Melania Knauss; April 26, 1970) is a Slovenian-American former fashion",
+        "timestamp": "2019-10-29T04:22:22Z"
+      },
+      {
+        "ns": 0,
+        "title": "Fred Trump",
+        "pageid": 1203316,
+        "size": 43688,
+        "wordcount": 4293,
+        "snippet": "Frederick Christ <span class=\"searchmatch\">Trump</span> (October 11, 1905 \u2013 June 25, 1999) was an American businessman and philanthropist. He was a prominent real-estate developer in",
+        "timestamp": "2019-10-27T11:24:17Z"
+      },
+      {
+        "ns": 0,
+        "title": "Ivana Trump",
+        "pageid": 1057887,
+        "size": 25961,
+        "wordcount": 2377,
+        "snippet": "of Donald <span class=\"searchmatch\">Trump</span>. They married in 1977 and divorced in 1991. They have three children together, Donald <span class=\"searchmatch\">Trump</span> Jr., Ivanka <span class=\"searchmatch\">Trump</span>, and Eric <span class=\"searchmatch\">Trump</span>. Ivana Zeln\u00ed\u010dkov\u00e1",
+        "timestamp": "2019-10-25T04:28:36Z"
+      },
+      {
+        "ns": 0,
+        "title": "Ivanka Trump",
+        "pageid": 1861441,
+        "size": 111476,
+        "wordcount": 8661,
+        "snippet": "Ivana Marie &quot;Ivanka&quot; <span class=\"searchmatch\">Trump</span> (/\u026a\u02c8v\u0251\u02d0\u014bk\u0259/), also known as Yael Kushner (Hebrew: \u05d9\u05b8\u05e2\u05b5\u05dc, lit. ibex; born October 30, 1981), is an American businesswoman, fashion",
+        "timestamp": "2019-10-28T23:57:55Z"
+      },
+      {
+        "ns": 0,
+        "title": "Donald Trump Jr.",
+        "pageid": 5679119,
+        "size": 70584,
+        "wordcount": 5762,
+        "snippet": "Donald John <span class=\"searchmatch\">Trump</span> Jr. (born December 31, 1977) is an American businessman and former reality television personality. He is the eldest child of President",
+        "timestamp": "2019-11-01T16:54:20Z"
+      },
+      {
+        "ns": 0,
+        "title": "Trump\u2013Ukraine scandal",
+        "pageid": 61839384,
+        "size": 318107,
+        "wordcount": 28814,
+        "snippet": "The <span class=\"searchmatch\">Trump</span>\u2013Ukraine scandal is an ongoing political scandal in the United States. It revolves around efforts by U.S. President Donald <span class=\"searchmatch\">Trump</span> to coerce Ukraine",
+        "timestamp": "2019-11-02T04:01:36Z"
+      }
+    ]
+  }
+}

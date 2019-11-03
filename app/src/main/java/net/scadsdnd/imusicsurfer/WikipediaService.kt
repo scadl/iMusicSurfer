@@ -9,22 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 interface WikipediaService {
 
-    /* Building WikiRequest
-    https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=Something
-
-    Resposnse:
-    {
-        batchcomplete: "",
-        continue: {
-            sroffset: 10,
-            continue: "-||"
-        },
-        query: {
-            searchinfo: {
-            totalhits: 16776
-        },
-        search: [...
-     */
+    // Building WikiRequest
+    //https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=Something
 
     @GET("api.php")
     fun hitCountCheck(
