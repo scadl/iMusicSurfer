@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private val WikipediaSVC by lazy {
         WikipediaService.create()
     }
-    private val iTunesSVC by lazy{
+    private val iTunesSVC by lazy {
         iTunesService.createIMSvc()
     }
 
@@ -33,13 +33,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Add event listeners to buttons
-        btn_search.setOnClickListener{
-            if(edit_search.text.toString().isNotEmpty()){
+        btn_search.setOnClickListener {
+            if (edit_search.text.toString().isNotEmpty()) {
                 beginSearch(edit_search.text.toString())
             }
         }
-        btn_search2.setOnClickListener{
-            if(edit_search.text.toString().isNotEmpty()){
+        btn_search2.setOnClickListener {
+            if (edit_search.text.toString().isNotEmpty()) {
                 albumSearchRun(edit_search.text.toString())
             }
         }
@@ -49,48 +49,44 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    private fun beginSearch(searchString: String){
+    private fun beginSearch(searchString: String) {
         disposableWiki = WikipediaSVC.hitCountCheck("query", "json", "search", searchString)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { result -> run {
+                { result ->
+                    run {
 
-                    txt_search_result.text = "${result.query.searchinfo.totalhits} articles in Wikipedia"}
+                        txt_search_result.text =
+                            "${result.query.searchinfo.totalhits} articles in Wikipedia"
+                    }
 
                     result.query.search.forEach {
-                        txt_search_result.text = "${txt_search_result.text}\n [${it.pageid}] ${it.title}"
+                        txt_search_result.text =
+                            "${txt_search_result.text}\n [${it.pageid}] ${it.title}"
                     }
 
-                    /*
-                    viewManager = LinearLayoutManager(this)
-                    viewAdapter = WikiRcVAdapt(result.query.search)
-                    recyclerView = findViewById<RecyclerView>(R.id.root_list).apply {
-                        setHasFixedSize(true)
-                        layoutManager = viewManager
-                        adapter = viewAdapter
-                    }
-                    */
                 },
                 { error -> Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show() }
             )
     }
 
-    private fun albumSearchRun(userKeyword: String){
+    private fun albumSearchRun(userKeyword: String) {
         // set the request patamters values
         disposableITM = iTunesSVC.searchAlbums(userKeyword, "RU", "music", "album")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { result -> run{
-                    txt_search_result.text = "${result.resultCount} albums in iTunes"
-                    viewManager = LinearLayoutManager(this)
-                    viewAdapter = iTunesRcVAdapt(result.results)
-                    recyclerView = findViewById<RecyclerView>(R.id.root_list).apply {
-                        setHasFixedSize(true)
-                        layoutManager = viewManager
-                        adapter = viewAdapter
-                    }
+                { result ->
+                    run {
+                        txt_search_result.text = "${result.resultCount} albums in iTunes"
+                        viewManager = LinearLayoutManager(this)
+                        viewAdapter = iTunesRcVAdapt(result.results)
+                        recyclerView = findViewById<RecyclerView>(R.id.root_list).apply {
+                            setHasFixedSize(true)
+                            layoutManager = viewManager
+                            adapter = viewAdapter
+                        }
                     }
                 },
                 { error -> Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show() }

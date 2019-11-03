@@ -1,24 +1,15 @@
 package net.scadsdnd.imusicsurfer
 
-import android.app.LauncherActivity
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import retrofit2.http.Url
-import java.net.HttpURLConnection
-import java.net.URISyntaxException
-import java.net.URL
 
-// RecycleView Adapter.
-// https://developer.android.com/guide/topics/ui/layout/recyclerview
 class iTunesRcVAdapt(private val myDataset: Array<iTunesModel.Album>):
     RecyclerView.Adapter<iTunesRcVAdapt.MyViewHolder>() {
 
@@ -27,8 +18,11 @@ class iTunesRcVAdapt(private val myDataset: Array<iTunesModel.Album>):
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        //holder.textView.text = myDataset[position].collectionName
         holder.bind(model = myDataset[position])
+        holder.itemView.setOnClickListener{
+            //Toast.makeText(holder.itemView.context, myDataset[position].collectionId.toString(), Toast.LENGTH_SHORT)
+            Log.e("---", myDataset[position].collectionId.toString())
+        }
     }
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
