@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
     private var disposableITM: Disposable? = null
 
     // Create service objects from service classes
-    private val WikipediaSVC by lazy {
-        WikipediaService.create()
-    }
     private val iTunesSVC by lazy {
         iTunesService.createIMSvc()
     }
@@ -33,11 +30,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Add event listeners to buttons
-        btn_search.setOnClickListener {
-            if (edit_search.text.toString().isNotEmpty()) {
-                beginSearch(edit_search.text.toString())
-            }
-        }
         btn_search2.setOnClickListener {
             if (edit_search.text.toString().isNotEmpty()) {
                 albumSearchRun(edit_search.text.toString())
@@ -48,28 +40,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-
-    private fun beginSearch(searchString: String) {
-        disposableWiki = WikipediaSVC.hitCountCheck("query", "json", "search", searchString)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                { result ->
-                    run {
-
-                        txt_search_result.text =
-                            "${result.query.searchinfo.totalhits} articles in Wikipedia"
-                    }
-
-                    result.query.search.forEach {
-                        txt_search_result.text =
-                            "${txt_search_result.text}\n [${it.pageid}] ${it.title}"
-                    }
-
-                },
-                { error -> Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show() }
-            )
-    }
 
     private fun albumSearchRun(userKeyword: String) {
         // set the request patamters values

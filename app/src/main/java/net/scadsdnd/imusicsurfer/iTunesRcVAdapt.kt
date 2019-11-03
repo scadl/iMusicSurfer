@@ -1,5 +1,6 @@
 package net.scadsdnd.imusicsurfer
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,8 +21,9 @@ class iTunesRcVAdapt(private val myDataset: Array<iTunesModel.Album>):
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(model = myDataset[position])
         holder.itemView.setOnClickListener{
-            //Toast.makeText(holder.itemView.context, myDataset[position].collectionId.toString(), Toast.LENGTH_SHORT)
+            Toast.makeText(holder.itemView.context, myDataset[position].collectionId.toString(), Toast.LENGTH_SHORT)
             Log.e("---", myDataset[position].collectionId.toString())
+            //val myInt: Intent = Intent(holder.itemView.context, )
         }
     }
 
