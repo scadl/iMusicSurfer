@@ -58,22 +58,17 @@ class MainActivity : AppCompatActivity() {
 
                     txt_search_result.text = "${result.query.searchinfo.totalhits} articles in Wikipedia"}
 
+                    result.query.search.forEach {
+                        txt_search_result.text = "${txt_search_result.text}\n [${it.pageid}] ${it.title}"
+                    }
+
+                    /*
                     viewManager = LinearLayoutManager(this)
                     viewAdapter = WikiRcVAdapt(result.query.search)
                     recyclerView = findViewById<RecyclerView>(R.id.root_list).apply {
                         setHasFixedSize(true)
                         layoutManager = viewManager
                         adapter = viewAdapter
-                    }
-
-                    /*
-                    result.query.search.forEach {
-                        txt_search_result.text = "${txt_search_result.text}\n ${it.pageid} - ${it.title}"
-                    }
-                    var arAdapt = ArrayAdapter(this, android.R.layout.simple_list_item_1, result.query.search)
-                    root_list.adapter = arAdapt
-                    root_list.setOnItemClickListener{
-                        adapterView, view, i, l -> Toast.makeText(this, result.query.search[i].toString(), Toast.LENGTH_SHORT).show()
                     }
                     */
                 },
@@ -87,7 +82,17 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { result -> txt_search_result.text = "${result.resultCount} albums in iTunes" },
+                { result -> run{
+                    txt_search_result.text = "${result.resultCount} albums in iTunes"
+                    viewManager = LinearLayoutManager(this)
+                    viewAdapter = iTunesRcVAdapt(result.results)
+                    recyclerView = findViewById<RecyclerView>(R.id.root_list).apply {
+                        setHasFixedSize(true)
+                        layoutManager = viewManager
+                        adapter = viewAdapter
+                    }
+                    }
+                },
                 { error -> Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show() }
             )
 

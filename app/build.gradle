@@ -26,16 +26,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    // retrofit
+    // retrofit - best way to work with json and apis
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
-    // rxandroid
+    // rxandroid - smart way to work with services
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+
+    // glide - optimal way to work with remote resources
+    implementation "com.github.bumptech.glide:glide:3.7.0"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
