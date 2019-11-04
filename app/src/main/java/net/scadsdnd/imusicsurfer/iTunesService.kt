@@ -9,10 +9,8 @@ import retrofit2.http.Query
 
 interface iTunesService {
 
-    // Request example
-    // https://itunes.apple.com/search?term=abba&country=RU&media=music&entity=album
-
-    // set the request parameter names
+    // set the request parameter names - keyword search
+    // Example: https://itunes.apple.com/search?term=abba&country=RU&media=music&entity=album
     @GET("search")
     fun searchAlbums(@Query("term") term:String,
                      @Query("country") country:String,
@@ -20,6 +18,13 @@ interface iTunesService {
                      @Query("entity") entity:String
     ): Observable<iTunesModel.Result>
     // ^ set the output structure using custom model
+
+    // Set the request parameter names - id lookup
+    // Example: https://itunes.apple.com/lookup?id=1422648512&entity=song
+    @GET("lookup")
+    fun getAlbumSongs(@Query("id") term:String,
+                     @Query("entity") entity:String
+    ): Observable<iTunesSongModel.Result>
 
     // build the actual request
     companion object{

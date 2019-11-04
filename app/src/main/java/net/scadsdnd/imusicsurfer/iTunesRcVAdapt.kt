@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -21,9 +23,11 @@ class iTunesRcVAdapt(private val myDataset: Array<iTunesModel.Album>):
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(model = myDataset[position])
         holder.itemView.setOnClickListener{
-            Toast.makeText(holder.itemView.context, myDataset[position].collectionId.toString(), Toast.LENGTH_SHORT)
+            //Toast.makeText(holder.itemView.context, myDataset[position].collectionId.toString(), Toast.LENGTH_SHORT)
             Log.e("---", myDataset[position].collectionId.toString())
-            //val myInt: Intent = Intent(holder.itemView.context, )
+            val myInt = Intent(holder.itemView.context, DetailActivity::class.java)
+            myInt.putExtra("albumId", myDataset[position].collectionId)
+            ActivityCompat.startActivity(holder.itemView.context, myInt, null)
         }
     }
 
